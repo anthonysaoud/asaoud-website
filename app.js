@@ -6,9 +6,8 @@ const ejs = require("ejs");
 const { sendFile } = require("express/lib/response");
 const { resetWatchers } = require("nodemon/lib/monitor/watch");
 const _ = require('lodash')
-require('dotenv').config()
 const mongoose = require('mongoose')
-
+require('custom-env').env('.env.staging')
 const homeStartingContent = "Welcome to my full stack dev journey!";
 const aboutContent = "Hi, my name is Anthony Saoud. I have been in the Data industry for over 7 years, and I am pivotting into the development world one day at a time.";
 const contactContent = "Feel free to drop me a note at a.saoud1@outlook.com to chat!";
