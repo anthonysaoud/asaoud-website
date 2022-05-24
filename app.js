@@ -7,11 +7,14 @@ const { sendFile } = require("express/lib/response");
 const { resetWatchers } = require("nodemon/lib/monitor/watch");
 const _ = require('lodash')
 const mongoose = require('mongoose')
-require('custom-env').env('.env.staging')
+require('custom-env').env()
 const homeStartingContent = "Welcome to my full stack dev journey!";
 const aboutContent = "Hi, my name is Anthony Saoud. I have been in the Data industry for over 7 years, and I am pivotting into the development world one day at a time.";
 const contactContent = "Feel free to drop me a note at a.saoud1@outlook.com to chat!";
-mongoURL = "mongodb+srv://admin-asaoud:"+process.env.mongoPW+"@asaoud-cluster.hkfzrjb.mongodb.net/?retryWrites=true&w=majority"
+
+const mongoPw = process.env.mongoPW
+
+mongoURL = "mongodb+srv://admin-asaoud:"+mongoPw+"@asaoud-cluster.hkfzrjb.mongodb.net/?retryWrites=true&w=majority"
 
 //connect mongodb
 mongoose.connect(mongoURL, {useNewURLParser:true})
